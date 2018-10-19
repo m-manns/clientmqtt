@@ -3,6 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
+	"time"
 
 	MqttLib "github.com/eclipse/paho.mqtt.golang"
 	log "github.com/sirupsen/logrus"
@@ -54,4 +55,5 @@ func main() {
 	if client.IsConnected() {
 		client.Disconnect(1)
 	}
+	time.Sleep(time.Duration(2) * time.Second)
 }
